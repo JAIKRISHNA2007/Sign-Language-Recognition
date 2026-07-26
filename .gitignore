@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Dataset
+data/raw/
+data/processed/
+
+# Trained Model
+models/
+
+# Streamlit cache
+.streamlit/
+
+# Logs
+*.log
