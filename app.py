@@ -1,3 +1,5 @@
+import os
+import gdown
 import streamlit as st
 import cv2
 import numpy as np
@@ -39,7 +41,17 @@ st.markdown("""
 # -------------------------------------------------------------------
 @st.cache_resource
 def load_model():
-    return joblib.load("models/sign_model.pkl")
+    model_path = "models/sign_model.pkl"
+
+    if not os.path.exists(model_path):
+        os.makedirs("models", exist_ok=True)
+
+        file_id = "15EdH8xObL9C2WmApvWX_zUuSAEulGm-9"
+        url = f"https://drive.google.com/uc?id={file_id}"
+
+        gdown.download(url, model_path, quiet=False)
+
+    return joblib.load(model_path)
 
 model = load_model()
 
