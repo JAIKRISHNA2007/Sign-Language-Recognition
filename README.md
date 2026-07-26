@@ -165,13 +165,25 @@ streamlit run app.py
 
 ## Screenshots
 
-*Screenshots will be added after deployment.*
+### Home Screen
+
+![Home](screenshots/home.png)
+
+### Letter Prediction
+
+![Letter Prediction](screenshots/letter_prediction.png)
+
+### Word Builder
+
+![Word Builder](screenshots/word_builder.png)
 
 ---
 
 ## Demo Video
 
-*A demonstration video will be added after deployment.*
+Watch the project demonstration here:
+
+https://drive.google.com/file/d/1CIfvCqkTBoVWGJuz7J8rJSHUccYhfNu_/view?usp=drive_link
 
 ---
 
