@@ -1,55 +1,59 @@
 # 🤟 Sign Language Recognition using MediaPipe & Random Forest
 
-A real-time American Sign Language (ASL) alphabet recognition system built using **MediaPipe**, **Random Forest**, **OpenCV**, and **Streamlit**. The application detects hand landmarks from a webcam feed and predicts ASL alphabet gestures in real time while allowing users to build words interactively.
+A real-time **American Sign Language (ASL)** recognition system built using **MediaPipe**, **Random Forest**, **OpenCV**, and **Streamlit**. The application detects hand landmarks from a webcam feed, predicts ASL alphabet gestures in real time, displays prediction confidence, and allows users to build complete words interactively.
 
 ---
 
-## 🚀 Live Demo
+# 🚀 Live Demo
 
-🌐 **Streamlit App**
+### 🌐 Live Application
 
 https://sign-language-recognition-version1.streamlit.app/
 
----
+### 📂 GitHub Repository
 
-## 🎥 Demo Video
+https://github.com/JAIKRISHNA2007/Sign-Language-Recognition
 
-▶️ Watch the complete project demonstration here:
+### 🎥 Project Demonstration
 
 https://drive.google.com/file/d/1CIfvCqkTBoVWGJuz7J8rJSHUccYhfNu_/view?usp=drive_link
 
+### 📥 Trained Model Download
+
+https://drive.google.com/drive/folders/1rnF8viszOJfsc73_ETXkF1SqFgCkrDZz?usp=drive_link
+
 ---
 
-## 📌 Features
+# 📌 Features
 
-- ✅ Real-time webcam-based sign language recognition
-- ✅ MediaPipe hand landmark detection
-- ✅ Random Forest machine learning model
-- ✅ Predicts ASL alphabet gestures
+- ✅ Real-time webcam-based ASL recognition
+- ✅ MediaPipe 21-hand landmark extraction
+- ✅ Random Forest Machine Learning classifier
 - ✅ Live confidence score
-- ✅ Word builder
+- ✅ Automatic word builder
 - ✅ Space gesture support
 - ✅ Delete gesture support
 - ✅ Stable prediction filtering
-- ✅ Clean Streamlit interface
-- ✅ Deployable on Streamlit Community Cloud
+- ✅ Interactive Streamlit web interface
+- ✅ Automatic model download support
+- ✅ Easily deployable on Streamlit Community Cloud
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
 - Python
 - Streamlit
 - MediaPipe
 - OpenCV
 - Scikit-learn
-- Random Forest Classifier
+- Random Forest
 - NumPy
 - Joblib
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 Sign-Language-Recognition/
@@ -61,7 +65,6 @@ Sign-Language-Recognition/
 ├── .gitignore
 │
 ├── models/
-│   └── sign_model.pkl
 │
 ├── src/
 │   ├── extract_landmarks.py
@@ -78,38 +81,53 @@ Sign-Language-Recognition/
 
 ---
 
-## ⚙️ How It Works
+# ⚙️ Project Workflow
 
-1. Webcam captures live frames.
-2. MediaPipe extracts **21 hand landmarks**.
-3. Landmark coordinates are converted into feature vectors.
-4. Random Forest predicts the corresponding ASL letter.
-5. Stable predictions are added to the word builder.
-6. Special gestures allow adding spaces and deleting characters.
+```
+ASL Alphabet Dataset
+          │
+          ▼
+MediaPipe Hand Detection
+          │
+          ▼
+21 Hand Landmarks
+          │
+          ▼
+63 Numerical Features
+          │
+          ▼
+Random Forest Model
+          │
+          ▼
+Real-Time Prediction
+          │
+          ▼
+Word Builder
+```
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshots
 
-### 🏠 Home Screen
+## 🏠 Home Screen
 
 ![Home](screenshots/home.png)
 
 ---
 
-### ✋ Letter Prediction
+## ✋ Letter Prediction
 
 ![Prediction](screenshots/letter_prediction.png)
 
 ---
 
-### 📝 Word Builder
+## 📝 Word Builder
 
 ![Word Builder](screenshots/word_builder.png)
 
 ---
 
-## 📦 Installation
+# 📦 Installation
 
 Clone the repository
 
@@ -117,7 +135,7 @@ Clone the repository
 git clone https://github.com/JAIKRISHNA2007/Sign-Language-Recognition.git
 ```
 
-Move into the project
+Move into the project folder
 
 ```bash
 cd Sign-Language-Recognition
@@ -129,6 +147,28 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
+Download the **ASL Alphabet Dataset** from:
+
+https://www.kaggle.com/datasets/grassknoted/asl-alphabet
+
+Extract the dataset into
+
+```text
+data/raw/asl_alphabet_train/
+```
+
+Generate landmark features
+
+```bash
+python src/extract_landmarks.py
+```
+
+Train the Random Forest model
+
+```bash
+python src/train_model.py
+```
+
 Run the application
 
 ```bash
@@ -137,68 +177,71 @@ streamlit run app.py
 
 ---
 
-## 📊 Machine Learning Pipeline
+# 🧠 Machine Learning Model
 
-Dataset
+Algorithm:
 
-↓
+- Random Forest Classifier
 
-MediaPipe
+Input:
 
-↓
+- 21 MediaPipe Hand Landmarks
+- 63 Numerical Features
 
-21 Hand Landmarks
+Output:
 
-↓
-
-63 Numerical Features
-
-↓
-
-Random Forest Model
-
-↓
-
-Real-time Prediction
-
-↓
-
-Word Builder
+- ASL Alphabet Prediction
 
 ---
 
-## 📁 Model
+# 📁 Dataset
 
-The trained model is hosted separately because GitHub has file size limitations.
+Dataset Used:
 
-Model Download:
+**ASL Alphabet Dataset**
+
+https://www.kaggle.com/datasets/grassknoted/asl-alphabet
+
+---
+
+# 📥 Model
+
+The trained model is hosted separately because GitHub has a 100 MB file size limit.
+
+Download it from:
 
 https://drive.google.com/drive/folders/1rnF8viszOJfsc73_ETXkF1SqFgCkrDZz?usp=drive_link
 
+Place it inside:
+
+```text
+models/sign_model.pkl
+```
+
 ---
 
-## 🔮 Future Improvements (Version 2)
+# 🔮 Future Improvements (Version 2)
 
-- Sentence formation
-- Deep Learning (LSTM/Transformer)
-- More ASL signs
-- Dynamic gesture recognition
-- Speech output
+- Deep Learning-based recognition (LSTM / Transformer)
+- Dynamic sign recognition
+- Sentence generation
 - Text-to-Speech
-- Translation support
-- Improved UI/UX
-- Better confidence estimation
-- Higher accuracy with larger datasets
+- Speech-to-Text
+- Support for additional sign languages
+- Higher prediction accuracy
+- Better UI/UX
+- Faster inference
+- Mobile application support
 
 ---
 
-## 📄 License
+# 📄 License
 
 This project is licensed under the **MIT License**.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **JAI KRISHNA S**
 
@@ -206,14 +249,16 @@ Computer Science Engineering Student
 
 ---
 
-## 🏢 Internship Information
+# 🏢 Internship Information
 
-**CodTech AI Internship**
+**Organization:** CodTech IT Solutions
 
-**Project:** Sign Language Recognition using Machine Learning
+**Internship:** AI Internship
+
+**Project:** Sign Language Recognition using MediaPipe & Random Forest
 
 **Intern ID:** CTTS162
 
 ---
 
-⭐ If you found this project useful, consider giving it a star on GitHub!
+⭐ If you found this project helpful, please consider giving it a **Star ⭐** on GitHub.
